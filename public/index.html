@@ -7,7 +7,9 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700" rel="stylesheet">
     <meta name="theme-color" content="#000000" />
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -23,10 +25,57 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <!-- Add in some basic styles for our HTML -->
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        a {
+            color: currentColor;
+            text-decoration: none;
+        }
+
+        h1,h2,h3 {
+            margin: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            /* background: #280042; */
+            background: #700049;
+            padding: 16px;
+            color: #fff;
+            box-shadow: 0rem 2px 8px rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav svg {
+            width: 24px;
+            height: 24px;
+            fill: #fff;
+            margin-right: -5px;
+        }
+        nav h1 {
+            font-size: 16px;
+            color: #fff;
+        }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -37,5 +86,37 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+        <!-- Filler HTML as our app starts up -->
+        <div id="root">
+            <nav className="navbar">
+                <h1>
+                    🍸 Find A Cocktail
+                </h1>
+                <Link to="/saved">
+                bookmarked
+                </Link>
+            </nav>
+        </div>
+    <script>
+        // if ('serviceWorker' in navigator) {
+        //     window.addEventListener('load', function () {
+        //         navigator.serviceWorker.register('service-worker.js').then(function (registration) {
+        //             // Registration was successful
+        //             console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        //         }, function (err) {
+        //             // registration failed :(
+        //             console.log('ServiceWorker registration failed: ', err);
+        //         }).catch(function (err) {
+        //             console.log(err)
+        //         });
+        //     });
+        // } else {
+        //     console.log('service worker is not supported');
+        // }
+            // console.log(navigator.onLine);
+            // if (!navigator.onLine) {
+            //     window.location.href = '/saved';
+            // }
+    </script>
   </body>
 </html>

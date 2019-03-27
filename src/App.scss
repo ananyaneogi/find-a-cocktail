@@ -1,0 +1,154 @@
+button {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.cocktail-wrapper {
+    margin-top: 8px;
+    padding: 16px;
+
+    .cocktail-header {
+        display: flex;
+        margin-bottom: 24px;
+        justify-content: space-between;
+
+        div {
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+        }
+        span {
+            font-size: 0.95rem;
+            margin-top: 5px;
+            color: #4a4a4a;
+            font-weight: 400;
+            display: block;
+        }
+    }
+
+    h2 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+
+    .cocktail-details-ingredients {
+        display: flex;
+        margin-bottom: 24px;
+        div {
+            flex:3;
+        }
+        ul {
+
+            li {
+                margin-bottom: 5px;
+                font-size: 0.95rem;
+                color: #333;
+            }
+        }
+        .img-wrapper {
+            flex: 2;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+
+    p {
+        color: #333;
+        font-size: 1rem;
+        line-height: 1.4rem;
+        margin-bottom: 12px;
+    }
+}
+
+.refresh-fab {
+    background: #280042;
+    border: 0;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    position: fixed;
+    bottom: 24px;
+    right: 16px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5), 0px -2px 8px rgba(0, 0, 0, 0.5);
+
+    svg {
+        fill: #fff;
+        width: 30px;
+    }
+}
+
+.offline-btn {
+    font-size: 14px;
+    font-family: inherit;
+    font-style: italic;
+    color: #4e4c4c;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+
+    svg {
+        width: 24px;
+        
+    }
+}
+
+.saved-card {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    button {
+        padding: 0;
+        width: 24px;
+        height: 24px;
+        margin-right: -6px;
+    }
+
+    svg {
+        width: 18px;
+    }
+}
+
+dialog {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: 0;
+
+    button {
+        position: relative;
+        top: 16px;
+        left: 9px;
+
+        svg {
+           width: 24px;
+        }
+    }
+}
+
+@media(min-width: 767px) {
+    .cocktail-wrapper {
+        max-width: 400px;
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        margin: 20px auto;
+        border: 10px #292929 double;
+        height: 100%;
+        min-height: 75vh;
+    }
+}
