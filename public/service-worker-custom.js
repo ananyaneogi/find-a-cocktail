@@ -7,28 +7,6 @@ var urlsToCache = [
     '/static/js/bundle.js'
 ];
 
-// Delete old caches that are not our current one!
-// self.addEventListener("activate", event => {
-//     const cacheWhitelist = [CACHE_NAME];
-//     event.waitUntil(
-//         caches.keys()
-//             .then(keyList =>
-//                 Promise.all(keyList.map(key => {
-//                     if (!cacheWhitelist.includes(key)) {
-//                         console.log('Deleting cache: ' + key)
-//                         return caches.delete(key);
-//                     }
-//                 }))
-//             )
-//     );
-// });
-
-// self.addEventListener('activate', function (event) {
-//     // `claim()` sets this worker as the active worker for all clients that
-//     // match the workers scope and triggers an `oncontrollerchange` event for
-//     // the clients.
-//     return self.clients.claim();
-// });
 
 self.addEventListener('activate', function (event) {
     event.waitUntil(
@@ -65,31 +43,6 @@ self.addEventListener('install', function (event) {
         })
     );
 });
-
-// When the webpage goes to fetch files, we intercept that request and serve up the matching files
-// if we have them
-// self.addEventListener('fetch', function (event) {
-//     // Ignore non-get request like when accessing the admin panel
-//     // Don't try to handle non-secure assets because fetch will fail
-
-//     // Here's where we cache all the things!
-//     event.respondWith(
-//         // Open the cache created when install
-//         caches.open(CACHE_NAME).then(function (cache) {
-//             // Go to the network to ask for that resource
-//             return fetch(event.request).then(function (networkResponse) {
-//                 // Add a copy of the response to the cache (updating the old version)
-//                 cache.put(event.request, networkResponse.clone());
-//                 // Respond with it
-//                 return networkResponse;
-//             }).catch(function (e) {
-//                 // If there is no internet connection, try to match the request
-//                 // to some of our cached resources
-//                 return caches.match(event.request);
-//             })
-//         })
-//     );
-//});
 
 self.addEventListener('fetch', function (event) {
     event.respondWith(
