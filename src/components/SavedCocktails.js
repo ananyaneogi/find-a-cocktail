@@ -42,7 +42,7 @@ class SavedCocktails extends Component {
         const { cocktailOffline } = this.state; 
 
         if (Object.keys(cocktailOffline).length === 0) {
-            showContent = <p>You haven't bookmarked any cocktail yet!</p>
+            showContent = <div className="offline-msg">You haven't bookmarked any cocktail recipe yet!</div>
         } else {
             showContent = Object.keys(cocktailOffline).map((key) => (
                 (<div className="saved-card" key={cocktailOffline[key].idDrink} onClick={() => this.expandView(cocktailOffline[key])}>

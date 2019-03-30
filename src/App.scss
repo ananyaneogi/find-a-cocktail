@@ -1,9 +1,23 @@
+$primary-color: #700049;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
 button {
     padding: 0;
     border: 0;
     box-shadow: none;
     background: transparent;
     cursor: pointer;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 .cocktail-wrapper {
@@ -43,6 +57,7 @@ button {
             flex:3;
         }
         ul {
+            min-height: 90px;
 
             li {
                 margin-bottom: 5px;
@@ -69,7 +84,7 @@ button {
 }
 
 .refresh-fab {
-    background: #280042;
+    background: $primary-color;
     border: 0;
     border-radius: 50%;
     width: 50px;
@@ -108,6 +123,7 @@ button {
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 
     button {
         padding: 0;
@@ -140,12 +156,30 @@ dialog {
     }
 }
 
+.offline-msg {
+    margin: 16px;
+    padding: 16px;
+    background: #e9fff2;
+    font-size: 16px;
+    line-height: 24px;
+    color: #292929;
+
+    a {
+        color: $primary-color;
+        font-weight: bold;
+        border-bottom: 2px solid currentColor;
+    }
+}
+
 @media(min-width: 767px) {
+    button {
+        &:focus {
+            outline: 1px solid $primary-color;
+        }
+    }
+
     .cocktail-wrapper {
         max-width: 400px;
-        /* display: flex; */
-        /* justify-content: center; */
-        /* align-items: center; */
         margin: 20px auto;
         border: 10px #292929 double;
         height: 100%;
