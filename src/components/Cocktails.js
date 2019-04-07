@@ -16,7 +16,8 @@ class Cocktail extends Component {
             isOffline: false
         }
     }
-    componentWillMount() {
+    
+    componentDidMount() {
         this.getRandomCocktail();
         if(!navigator.onLine) {
             this.setState({ isOffline: true })

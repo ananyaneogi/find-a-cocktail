@@ -3,6 +3,7 @@ var CACHE_NAME = 'find-a-cocktail-v1';
 
 var urlsToCache = [
     '/',
+    '/saved',
     '/styles/styles.css',
     '/static/js/bundle.js'
 ];
